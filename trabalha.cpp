@@ -1,7 +1,5 @@
 #include <iostream>
-#include <fstream>
-#include <cstring>
-using namespace std;
+#include "Biblioteca/funcoes.h"
 
 int main(){
     string linha, objeto, tipo;
@@ -16,22 +14,10 @@ int main(){
         arquivo >> quantidade;
         
         for(int i = 0; i < quantidade; i++){
-            
+            Getline_bombado(objeto, tipo, valor, id, i);
 
-            arquivo >> id;
-            arquivo >> lixo;
-
-            arquivo >> lixo;
-            getline(arquivo, objeto, '"');
-            arquivo >> lixo;
-
-            arquivo >> lixo;
-            getline(arquivo, tipo, '"');
-            arquivo >> lixo;
-
-            arquivo >> valor;
-
-            if(objeto.length() <= 16) objeto = objeto + "\t";
+            if(objeto.length() < 16)
+                objeto = objeto + "\t";
 
             cout << id << "\t";
             cout << objeto << "\t";
